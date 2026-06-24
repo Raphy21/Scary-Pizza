@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.A.N.E.</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="terminal">
+    
+        <div id="boot"></div>
+
+        <div id="message" class="hidden">          
+            <h1>J.A.N.E</h1>
+
+            <div id="terminal-line">
+                <span id="typed-text"></span>
+            </div>
+            <br>
+            <button id="continueBtn">
+                Continuar
+            </button>
+        </div>
+            <div id="mainMenu" class="hidden">
+
+                <h1>J.A.N.E</h1>
+
+                <p>
+                    Nivel de acceso:
+                    INVITADO
+                </p>
+
+                <br>
+
+                <button class="menuBtn"
+                    onclick="showSection('project')">
+                    PROYECTO
+                </button>
+
+                <button class="menuBtn"
+                    onclick="showSection('gallery')">
+                    ARCHIVOS
+                </button>
+
+                <button class="menuBtn"
+                    onclick="showSection('status')">
+                    ESTADO
+                </button>
+            </div>
+            <div id="project" class="section hidden">
+
+                <h2>PROYECTO ███████</h2>
+
+                <br>
+
+                <p>
+                    Estado: Activo
+                </p>
+
+                <br>
+
+                <p>Registro detectado.</p>
+
+                <br>
+
+                <p>
+                    El contenido de este archivo no está disponible para visitantes.
+                </p>
+
+                <br>
+
+                <p>
+                    Acceso denegado.
+                </p>
+
+                <br>
+
+                <p>
+                    Motivo: Permisos insuficientes.
+                </p>
+
+            </div>
+            <div id="gallery" class="section hidden">
+
+                <h2>ARCHIVOS RECUPERADOS</h2>
+
+                <br>
+
+                <button class="fileBtn"
+                        onclick="openRecoveredFile('mobile')">
+
+                    [01] Interfaz_Movil.log
+
+                </button>
+
+                <button class="fileBtn"
+                        onclick="openRecoveredFile('incident')">
+
+                    [02] Incidente_001.log
+
+                </button>
+
+                <button class="fileBtn"
+                        onclick="openRecoveredFile('projectlog')">
+
+                    [03] Proyecto.log
+
+                </button>
+
+                <hr>
+
+                <div id="fileViewer">
+
+                    Seleccione un archivo.
+
+                </div>
+
+            </div>
+            <div id="status" class="section hidden">
+
+                <h2>ESTADO DEL SISTEMA</h2>
+
+                <br>
+
+                <pre>
+            Developer : Raphy
+
+            Version   : 0.01 Alpha
+
+            Build     : SP-DEV-0001
+
+            Status    : IN DEVELOPMENT
+
+            Target    : Playable Demo
+                </pre>
+
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

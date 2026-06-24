@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.A.N.E.</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="terminal">
+    
+        <div id="boot"></div>
+
+        <div id="message" class="hidden">          
+            <h1>J.A.N.E.</h1>
+
+            <div id="terminal-line">
+                <span id="typed-text"></span>
+            </div>
+            <br>
+            <button id="continueBtn" class="hidden">
+                Continuar
+            </button>
+        </div>
+            <div id="mainMenu" class="hidden">
+
+                <h1>J.A.N.E.</h1>
+
+                <p>
+                    Empleado N° 004
+                </p>
+
+                <p>
+                    Estado:
+                    CAPACITACIÓN ACTIVA
+                </p>
+
+                <p>
+                    Asesor asignado:
+                    Julieta
+                </p>
+
+                <br>
+
+                <button class="menuBtn"
+                    onclick="showSection('project')">
+                    MANUAL DE EMPLEADO
+                </button>
+
+                <button class="menuBtn"
+                    onclick="showSection('staff')">
+                    PERSONAL DEL RESTAURANTE
+                </button>
+
+                <button class="menuBtn"
+                    onclick="showSection('operations')">
+                    PROCEDIMIENTOS OPERATIVOS
+                </button>
+
+                <button class="menuBtn"
+                    onclick="showSection('visuals')">
+                    ARCHIVOS VISUALES 
+                </button>
+
+                <button class="menuBtn"
+                    onclick="showSection('status')">
+                    ESTADO DEL SISTEMA
+                </button>
+            </div>
+            <div id="project" class="section hidden">
+
+                <h2>MANUAL DEL EMPLEADO</h2>
+
+                <br>
+
+                <p> Bienvenido a Scary Pizza. </p>
+
+                <br>
+
+                <p> Scary Pizza es un videojuego actualmente en desarrollo que combina exploración, aventura, administración y misterio. </p>
+
+                <br>
+
+                <p> Esta terminal contiene documentación, personajes, arte conceptual y material relacionado con el proyecto. </p>
+
+                <br>
+
+                <p> Algunas secciones pueden cambiar durante el desarrollo. </p>
+
+            </div>
+            <div id="staff" class="section hidden">
+
+                <h2>PERSONAL DEL RESTAURANTE</h2>
+
+                <br>
+
+                <button class="fileBtn"
+                        onclick="openFile('chef')">
+
+                    [01] Chef.profile
+
+                </button>
+
+                <button class="fileBtn"
+                        onclick="openFile('julieta')">
+
+                    [02] Julieta.profile
+
+                </button>
+
+                <button class="fileBtn"
+                        onclick="openFile('jimmy')">
+
+                    [03] Jimmy.profile
+
+                </button>
+
+                <button class="fileBtn"
+                        onclick="openFile('sayuri')">
+
+                    [04] Sayuri.profile
+
+                </button>
+                <button class="fileBtn"
+                        onclick="openFile('antichef')">
+
+                    [04] Antichef.profile
+
+                </button>
+                <button class="fileBtn"
+                        onclick="openFile('calabaza')">
+
+                    [04] Calabaza.profile
+
+                </button>
+
+                <hr>
+
+                <div id="staffViewer">
+
+                    Seleccione un miembro del personal.
+
+                </div>
+
+            </div>
+            <div id="operations" class="section hidden">
+
+                <h2>PROCEDIMIENTOS OPERATIVOS</h2>
+
+                <br>
+
+                <button class="fileBtn"
+                        onclick="openFileOperative('exploracion')">
+
+                    [01] Exploración
+
+                </button>
+
+                <button class="fileBtn"
+                        onclick="openFileOperative('restaurante')">
+
+                    [02] Restaurante
+
+                </button>
+
+                <button class="fileBtn"
+                        onclick="openFileOperative('recursos')">
+
+                    [03] Recursos
+
+                </button>
+
+                <button class="fileBtn"
+                        onclick="openFileOperative('equipamiento')">
+
+                    [04] Equipamiento
+
+                </button>
+
+                <button class="fileBtn"
+                        onclick="openFileOperative('combate')">
+
+                    [05] Combate
+
+                </button>
+
+                <button class="fileBtn"
+                        onclick="openFileOperative('investigacion')">
+
+                    [06] Investigación de Anomalías
+
+                </button>
+
+                <button class="fileBtn"
+                        onclick="openFileOperative('supervivencia')">
+
+                    [07] Protocolos de Supervivencia
+
+                </button>
+
+                <button class="fileBtn"
+                        onclick="openFileOperative('comunicaciones')">
+
+                    [08] Comunicaciones
+
+                </button>
+
+                <button class="fileBtn"
+                        onclick="openFileOperative('emergencia')">
+
+                    [09] Procedimientos de Emergencia
+
+                </button>
+
+                <hr>
+
+                <div id="operationsViewer">
+
+                    Seleccione un archivo.
+
+                </div>
+
+            </div>
+            <div id="visuals" class="section hidden">
+
+                <h2>ARCHIVOS VISUALES</h2>
+
+                <br>
+
+                <div class="galleryContainer">
+
+                    <button
+                        class="galleryBtn"
+                        onclick="previousImage()">
+
+                        ◄
+
+                    </button>
+
+                    <img
+                        id="galleryImage"
+                        src="images/logo.png"
+                        onclick="openCurrentImage()">
+
+                    <button
+                        class="galleryBtn"
+                        onclick="nextImage()">
+
+                        ►
+
+                    </button>
+
+                </div>
+
+                <br>
+
+                <p id="galleryTitle">
+
+                    Scary Pizza Concept Art
+
+                </p>
+
+            </div>
+            <div id="status" class="section hidden">
+
+                <h2>ESTADO DEL SISTEMA</h2>
+
+                <br>
+
+                <pre>
+            Developer : Raphy
+
+            Version   : 0.01 Alpha
+
+            Build     : SP-DEV-0001
+
+            Status    : IN DEVELOPMENT
+
+            Target    : Playable Demo
+                </pre>
+
+            </div>
+    </div>
+
+    <script src="empleado.js"></script>
+
+</body>
+</html>

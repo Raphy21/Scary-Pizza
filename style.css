@@ -1,0 +1,331 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#000;
+    color:#00ff66;
+    overflow:hidden;
+
+    text-shadow:
+    0 0 5px #00ff66,
+    0 0 10px #00ff66;
+    font-family:monospace;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    animation:crtFlicker .15s infinite;
+}
+
+body::before{
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        rgba(0,255,100,.08),
+        rgba(0,255,100,.08) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+
+    opacity:.15;
+    mix-blend-mode:screen;
+
+    pointer-events:none;
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle,
+        transparent 55%,
+        rgba(0,0,0,.45) 100%
+    );
+
+    pointer-events:none;
+}
+
+#terminal{
+
+    transform:perspective(1200px)
+    rotateX(1deg);
+
+}
+
+#terminal-line{
+    white-space: pre-wrap;
+    display:inline;
+}
+
+.cursor{
+    animation:blink .8s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0;
+    }
+}
+
+#terminal{
+    width:min(900px,90%);
+}
+
+.hidden{
+    display:none;
+}
+
+#boot{
+    white-space:pre-line;
+    line-height:1.8;
+}
+
+h1{
+    margin-bottom:20px;
+    color:#00ff66;
+}
+
+button{
+    margin-top:30px;
+    padding:10px 20px;
+
+    background:none;
+    border:1px solid #00ff66;
+    color:#00ff66;
+
+    cursor:pointer;
+}
+
+button:hover{
+    background:#00ff66;
+    color:black;
+}
+
+@keyframes glitchSignal{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    10%{
+        transform:translateX(-12px);
+    }
+
+    20%{
+        transform:translateX(15px);
+    }
+
+    30%{
+        transform:translateX(-8px);
+    }
+
+    40%{
+        transform:translateX(10px);
+    }
+
+    50%{
+        transform:translateX(-5px);
+    }
+
+    100%{
+        transform:translateX(0);
+    }
+}
+
+.glitch{
+    animation:glitchSignal .18s linear;
+    animation:
+        glitchSignal .12s linear,
+        glitchFlash .12s linear;
+
+    transform:translateX(8px);
+
+    filter:
+        brightness(2)
+        contrast(1.5);
+}
+
+@keyframes crtFlicker{
+
+    0%{
+        opacity:1;
+    }
+
+    97%{
+        opacity:1;
+    }
+
+    98%{
+        opacity:.96;
+    }
+
+    99%{
+        opacity:.92;
+    }
+
+    100%{
+        opacity:1;
+    }
+}
+
+@keyframes glitchFlash{
+
+    0%{
+        filter:none;
+    }
+
+    50%{
+        filter:brightness(1.8);
+    }
+
+    100%{
+        filter:none;
+    }
+}
+
+.section{
+
+    margin-top:30px;
+
+    border:1px solid #00ff66;
+
+    padding:20px;
+
+    max-width:700px;
+    
+    height:500px;
+
+    overflow-y:auto;
+
+    scrollbar-width:thin;
+    scrollbar-color:#00ff66 #001a0a;
+
+}
+
+.fileBtn{
+
+    display:block;
+
+    background:none;
+
+    border:none;
+
+    color:#00ff66;
+
+    text-align:left;
+
+    margin:10px 0;
+
+    cursor:pointer;
+
+    font-family:inherit;
+}
+
+#fileViewer{
+
+    margin-top:20px;
+
+    border-top:1px solid #00ff66;
+
+    padding-top:20px;
+
+    min-height:220px;
+
+    white-space:pre-line;
+
+    line-height:1.8;
+}
+
+.section::-webkit-scrollbar{
+    width:10px;
+}
+
+.section::-webkit-scrollbar-track{
+    background:#001a0a;
+    border-left:1px solid #00ff66;
+}
+
+.section::-webkit-scrollbar-thumb{
+    background:#00ff66;
+    border:1px solid #00ff66;
+
+    box-shadow:
+        0 0 5px #00ff66,
+        0 0 10px #00ff66;
+}
+
+.section::-webkit-scrollbar-thumb:hover{
+    background:#66ff99;
+}
+
+.section::-webkit-scrollbar-thumb{
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        #00ff66,
+        #00ff66 2px,
+        #00cc55 2px,
+        #00cc55 4px
+    );
+}
+
+.section::-webkit-scrollbar-button{
+
+    background:#00ff66;
+}
+
+.galleryContainer{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+}
+
+.galleryBtn{
+
+    width:60px;
+    height:60px;
+
+    font-size:25px;
+}
+
+#galleryImage{
+
+    max-width:500px;
+    max-height:500px;
+
+    border:1px solid #00ff66;
+
+    cursor:pointer;
+}
+
+#continueBtn{
+    opacity:0;
+    pointer-events:none;
+
+    transition:opacity .8s ease;
+}
+
+#continueBtn.show{
+    opacity:1;
+    pointer-events:auto;
+}
