@@ -352,10 +352,7 @@ function openFileOperative(file){
         case "exploracion":
 
             viewer.innerHTML = `
-
-<p>
-Bienvenido al módulo de exploración.
-</p>
+<h3>BIENVENIDO AL MÓDULO DE EXPLORACIÓN</h3>
 
 <p>
 Durante tus operaciones visitarás
@@ -387,7 +384,7 @@ importante como cualquier herramienta.
         case "restaurante":
 
             viewer.innerHTML = `
-            <h3>PROCEDIMIENTO: RESTAURANTE</h3>
+            <h3>FUNCIONAMIENTO DEL RESTAURANTE</h3>
 
 <p>
 El restaurante funciona como centro
@@ -424,9 +421,7 @@ funcionando correctamente.
         case "recursos":
 
             viewer.innerHTML = `
-            <h3>PROCEDIMIENTO: RECURSOS</h3>
-
-<h3>PROCEDIMIENTO: RECURSOS</h3>
+            <h3>RECURSOS</h3>
 
 <p> Mientras explores nuevas localidades encontrarás ingredientes y materiales que podrían resultar útiles. </p>
 
@@ -444,7 +439,7 @@ funcionando correctamente.
         case "equipamiento":
 
             viewer.innerHTML = `
-            <h3>PROCEDIMIENTO: EQUIPAMIENTO</h3>
+            <h3>EQUIPAMIENTO</h3>
 
 <p>
 El equipamiento adecuado puede marcar

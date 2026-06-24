@@ -204,13 +204,13 @@ button:hover{
 
     padding:20px;
 
-    max-width:700px;
+    width:100%;
 
-    max-height:60vh;
+    max-width:850px;
+
+    max-height:70vh;
 
     overflow-y:auto;
-
-    width:100%;
 }
 
 .fileBtn{
@@ -287,13 +287,14 @@ button:hover{
 }
 
 .galleryContainer{
-
     display:flex;
-
-    justify-content:center;
-
+    flex-direction:column;
     align-items:center;
+    gap:20px;
+}
 
+.galleryControls{
+    display:flex;
     gap:20px;
 }
 
