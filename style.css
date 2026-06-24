@@ -7,13 +7,13 @@
 body{
     background:#000;
     color:#00ff66;
-    overflow:hidden;
+    overflow-x:hidden;
 
     text-shadow:
     0 0 5px #00ff66,
     0 0 10px #00ff66;
     font-family:monospace;
-    min-height:100vh;
+    min-height:100svh;
 
     display:flex;
     justify-content:center;
@@ -82,7 +82,7 @@ body::after{
 }
 
 #terminal{
-    width:min(900px,90%);
+    width:min(900px,95%);
 }
 
 .hidden{
@@ -198,7 +198,6 @@ button:hover{
 }
 
 .section{
-
     margin-top:30px;
 
     border:1px solid #00ff66;
@@ -206,14 +205,12 @@ button:hover{
     padding:20px;
 
     max-width:700px;
-    
-    height:500px;
+
+    max-height:60vh;
 
     overflow-y:auto;
 
-    scrollbar-width:thin;
-    scrollbar-color:#00ff66 #001a0a;
-
+    width:100%;
 }
 
 .fileBtn{
@@ -310,8 +307,8 @@ button:hover{
 
 #galleryImage{
 
-    max-width:500px;
-    max-height:500px;
+    max-width:100%;
+    max-height:60vh;
 
     border:1px solid #00ff66;
 
@@ -328,4 +325,37 @@ button:hover{
 #continueBtn.show{
     opacity:1;
     pointer-events:auto;
+}
+
+@media (max-width:768px){
+
+    body{
+        overflow-y:auto;
+        align-items:flex-start;
+
+        padding:20px 10px;
+    }
+
+    #terminal{
+        width:95%;
+    }
+
+    .section{
+        max-height:65vh;
+        height:auto;
+    }
+
+    #galleryImage{
+        max-width:100%;
+        max-height:50vh;
+    }
+
+    .galleryBtn{
+        width:50px;
+        height:50px;
+    }
+
+    .galleryContainer{
+        flex-direction:column;
+    }
 }
