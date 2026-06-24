@@ -773,3 +773,26 @@ function openCurrentImage(){
         "_blank"
     );
 }
+
+document
+    .getElementById("prevBtn")
+    .addEventListener(
+        "click",
+        previousImage
+    );
+
+document
+    .getElementById("nextBtn")
+    .addEventListener(
+        "click",
+        nextImage
+    );
+
+document
+    .getElementById("galleryImage")
+    .addEventListener(
+        "click",
+        openCurrentImage
+    );
+
+updateGallery();
